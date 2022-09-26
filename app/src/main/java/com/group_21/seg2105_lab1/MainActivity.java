@@ -1,4 +1,4 @@
-package com.example.seg2105_lab1_calculator;
+package com.group_21.seg2105_lab1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
