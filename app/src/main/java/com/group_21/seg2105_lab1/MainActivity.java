@@ -20,21 +20,25 @@ public class MainActivity extends AppCompatActivity {
     // Define calculator display
     TextView display;
 
+
+
     // Back End:
     // Define user-changeable values (for arithmetic operation)
-    ArrayList<String> values = new ArrayList<String>();
+    String values = "";
 
     // Define all possible mathematical operations/states (as enum variable)
-    enum Operator{
-        NONE, ADD, SUBTRACT, MULTIPLY, DIVIDE, EQUALS
+    enum State{
+        INPUT, EVALUATE
     }
 
-    Operator operator = Operator.NONE;
+    // Initialize calculator state
+    State state = State.INPUT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // Initialize all buttons that correspond to digits
         button_1 = findViewById(R.id.button_1);
         button_2 = findViewById(R.id.button_2);
@@ -60,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         // Initialize calculator display
         display = findViewById(R.id.display);
 
-
         }
 
     // Button on-click logic
@@ -68,77 +71,75 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()) {
             // Digits:
             case R.id.button_1:
-                add_number("1");
+                values = values + "1";
             case R.id.button_2:
-                add_number("2");
+                values = values + "2";
             case R.id.button_3:
-                add_number("3");
+                values = values + "3";
             case R.id.button_4:
-                add_number("4");
+                values = values + "4";
             case R.id.button_5:
-                add_number("5");
+                values = values + "5";
             case R.id.button_6:
-                add_number("6");
+                values = values + "6";
             case R.id.button_7:
-                add_number("7");
+                values = values + "7";
             case R.id.button_8:
-                add_number("8");
+                values = values + "8";
             case R.id.button_9:
-                add_number("9");
+                values = values + "9";
             case R.id.button_0:
-                add_number("0");
+                values = values + "0";
             case R.id.button_decimal:
-                add_number(".");
+                values = values + ".";
             // Operations:
             case R.id.button_add:
-                operator = Operator.ADD;
-                values.add(display.getText().toString());
+                values = values + "+";
             case R.id.button_subtract:
-                operator = Operator.SUBTRACT;
-                values.add(display.getText().toString());
+                values = values + "-";
             case R.id.button_multiply:
-                operator = Operator.MULTIPLY;
-                values.add(display.getText().toString());
+                values = values + "*";
             case R.id.button_divide:
-                operator = Operator.DIVIDE;
-                values.add(display.getText().toString());
+                values = values + "/";
             case R.id.button_equal:
-                operator = Operator.EQUALS;
-                perform_operation(values);
+                state = State.EVALUATE;
+                perform_operations(values);
             // Miscellaneous activities:
             case R.id.button_clear:
                 reset_calculator();
         }
-
-    }
-    private void add_number(String num){
-        display.setText(display.getText() + num);
+        values_to_display_text(values);
     }
 
-    private double perform_operation(ArrayList<String> values) {
-        double result = 0; // = 0 is TEMPORARY?
-        // figure out new method for arraylist of values instead of just two
-        switch (operator) {
-            case NONE:
-                break;
-            case ADD:
-                break;
-            case SUBTRACT:
-                break;
-            case DIVIDE:
-                break;
-            case EQUALS:
-                break;
+    private boolean is_first_char_number(String values) {
+        double test;
+        try {
+            test = (double)values.charAt(0);
         }
-        display.setText(Double.toString(result));
+        catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
+
+    private void values_to_display_text(String values) {
+        display.setText(values);
+    }
+
+    private double perform_operations(String values) {
+        double result = Double.NaN;
+        if (state == State.EVALUATE) {
+
+        }
         return result;
     }
 
-    private void reset_calculator() {
-        //value_1 = Double.NaN;
-        //value_2 = Double.NaN;
-        values = new ArrayList<String>();
-        operator = Operator.NONE;
+    private void clear_display() {
         display.setText("");
+    }
+
+    private void reset_calculator() {
+        values = "";
+        clear_display();
     }
 }
