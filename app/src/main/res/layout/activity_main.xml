@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1"
-        tools:layout_editor_absoluteX="19dp"
+        tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="449dp" />
 
     <Button
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2"
-        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteX="115dp"
         tools:layout_editor_absoluteY="449dp" />
 
     <Button
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3"
-        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteX="220dp"
         tools:layout_editor_absoluteY="449dp" />
 
     <Button
