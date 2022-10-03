@@ -14,25 +14,23 @@ public class MainActivity extends AppCompatActivity {
     // Define all buttons that correspond to digits
     Button button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_0, button_decimal;
     // Define all buttons that correspond to mathematical operations
-    Button button_add, button_subtract, button_multiply, button_divide, button_equal;
+    Button button_add, button_subtract, button_multiply, button_divide, button_left_bracket, button_right_bracket, button_equal;
     // Define all buttons that correspond to miscellaneous activities
-    Button button_clear;
+    Button button_clear, button_backspace;
     // Define calculator display
     TextView display;
-
-
 
     // Back End:
     // Define user-changeable values (for arithmetic operation)
     String values = "";
 
     // Define all possible mathematical operations/states (as enum variable)
-    enum State{
+    public enum State{
         INPUT, EVALUATE
     }
 
     // Initialize calculator state
-    State state = State.INPUT;
+    public static State state = State.INPUT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +54,13 @@ public class MainActivity extends AppCompatActivity {
         button_subtract = findViewById(R.id.button_subtract);
         button_multiply = findViewById(R.id.button_multiply);
         button_divide = findViewById(R.id.button_divide);
+        button_left_bracket = findViewById(R.id.button_left_bracket);
+        button_right_bracket = findViewById(R.id.button_left_bracket);
         button_equal = findViewById(R.id.button_equal);
 
         // Initialize all buttons that correspond to miscellaneous activities
         button_clear = findViewById(R.id.button_clear);
+        button_backspace = findViewById(R.id.button_backspace);
 
         // Initialize calculator display
         display = findViewById(R.id.display);
@@ -103,12 +104,12 @@ public class MainActivity extends AppCompatActivity {
                 values = values + "/";
             case R.id.button_equal:
                 state = State.EVALUATE;
-                perform_operations(values);
+                process_expression(values);
             // Miscellaneous activities:
             case R.id.button_clear:
                 reset_calculator();
         }
-        values_to_display_text(values);
+        display.setText(values);
     }
 
     private boolean is_first_char_number(String values) {
@@ -122,16 +123,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private void values_to_display_text(String values) {
-        display.setText(values);
-    }
-
-    private double perform_operations(String values) {
-        double result = Double.NaN;
-        if (state == State.EVALUATE) {
-
-        }
-        return result;
+    private void process_expression(String values) {
+        double result;
+        result = Evaluator.evaluate_expression(values);
+        values = Double.toString(result);
+        display.setText(Double.toString(result));
     }
 
     private void clear_display() {
@@ -141,5 +137,9 @@ public class MainActivity extends AppCompatActivity {
     private void reset_calculator() {
         values = "";
         clear_display();
+    }
+
+    public static State get_state() {
+        return state;
     }
 }
