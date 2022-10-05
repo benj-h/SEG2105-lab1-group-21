@@ -91,20 +91,36 @@ public class MainActivity extends AppCompatActivity {
                 values = values + "9";
             case R.id.button_0:
                 values = values + "0";
+            case R.id.button_left_bracket:
+                values = values + "(";
+            case R.id.button_right_bracket:
+                values = values + ")";
             case R.id.button_decimal:
-                values = values + ".";
+                if (is_first_char_number(values)) {
+                    values = values + ".";
+                }
             // Operations:
             case R.id.button_add:
-                values = values + "+";
+                if (is_first_char_number(values)) {
+                    values = values + "+";
+                }
             case R.id.button_subtract:
-                values = values + "-";
+                if (is_first_char_number(values)) {
+                    values = values + "-";
+                }
             case R.id.button_multiply:
-                values = values + "*";
+                if (is_first_char_number(values)) {
+                    values = values + "*";
+                }
             case R.id.button_divide:
-                values = values + "/";
+                if (is_first_char_number(values)) {
+                    values = values + "/";
+                }
             case R.id.button_equal:
-                state = State.EVALUATE;
-                process_expression(values);
+                if (is_first_char_number(values)) {
+                    state = State.EVALUATE;
+                    process_expression(values);
+                }
             // Miscellaneous activities:
             case R.id.button_clear:
                 reset_calculator();
