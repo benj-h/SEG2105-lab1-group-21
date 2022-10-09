@@ -6,191 +6,240 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/textBox"
         android:layout_width="0dp"
-        android:layout_height="65dp"
+        android:layout_height="150dp"
+        android:background="@drawable/textbox_background"
+        android:gravity="center"
         android:text="@string/View.textBox.text"
         android:textAlignment="textEnd"
         android:textSize="30sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="@+id/tableLayout" />
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:background="@drawable/keypad_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:id="@+id/row_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
 
             <Button
                 android:id="@+id/btnClear"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btnClear.text" />
 
             <Button
                 android:id="@+id/btnBracketsOpen"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btnBracketsOpen.text" />
 
             <Button
                 android:id="@+id/btnBracketsClosed"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btnBracketsClosed.text" />
 
             <Button
                 android:id="@+id/btnPlus"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/View.btnPlus.text" />
-
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="@string/View.btnAdd.text" />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:id="@+id/row_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/btn1"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn1.text" />
 
             <Button
                 android:id="@+id/btn2"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn2.text" />
 
             <Button
                 android:id="@+id/btn3"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn3.text" />
 
             <Button
                 android:id="@+id/btnMinus"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/View.btnMinus.text" />
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="@string/View.btnSubstract.text" />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:id="@+id/row_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/btn4"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn4.text" />
 
             <Button
                 android:id="@+id/btn5"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn5.text" />
 
             <Button
                 android:id="@+id/btn6"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn6.text" />
 
             <Button
                 android:id="@+id/btnMultiply"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btnMultiply.text" />
 
         </TableRow>
 
         <TableRow
+            android:id="@+id/row_4"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btn7"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn7.text" />
 
             <Button
                 android:id="@+id/btn8"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn8.text" />
 
             <Button
                 android:id="@+id/btn9"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn9.text" />
 
             <Button
                 android:id="@+id/btnDivide"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btnDivide.text" />
 
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:id="@+id/row_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/btnRadix"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btnRadix.text" />
 
             <Button
                 android:id="@+id/btn0"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btn0.text" />
 
             <Button
                 android:id="@+id/btnBackspace"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btnBackspace.text" />
 
             <Button
                 android:id="@+id/btnEquals"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
                 android:text="@string/View.btnEquals.text" />
 
         </TableRow>

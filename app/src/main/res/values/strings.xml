@@ -17,8 +17,8 @@
 
     <string name="View.btnBracketsOpen.text">(</string>
     <string name="View.btnBracketsClosed.text">)</string>
-    <string name="View.btnPlus.text">+</string>
-    <string name="View.btnMinus.text">-</string>
+    <string name="View.btnAdd.text">+</string>
+    <string name="View.btnSubstract.text">-</string>
     <string name="View.btnMultiply.text">×</string>
     <string name="View.btnDivide.text">÷</string>
     <string name="View.btnEquals.text">=</string>
