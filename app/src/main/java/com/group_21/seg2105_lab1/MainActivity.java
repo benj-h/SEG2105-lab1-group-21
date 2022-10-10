@@ -129,6 +129,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnRadix:
                 values = values + ".";
                 break;
+            case R.id.btnBracketsOpen:
+                values = values + "(";
+                break;
+            case R.id.btnBracketsClosed:
+                values = values + ")";
+                break;
             // Operations:
             case R.id.btnAdd:
                 values = values + "+";
