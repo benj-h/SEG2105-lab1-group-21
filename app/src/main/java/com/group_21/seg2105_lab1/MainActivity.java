@@ -94,38 +94,6 @@ public class MainActivity extends AppCompatActivity {
                 values = values + "9";
             case R.id.btn0:
                 values = values + "0";
-<<<<<<< HEAD
-            case R.id.button_left_bracket:
-                values = values + "(";
-            case R.id.button_right_bracket:
-                values = values + ")";
-            case R.id.button_decimal:
-                if (is_first_char_number(values)) {
-                    values = values + ".";
-                }
-            // Operations:
-            case R.id.button_add:
-                if (is_first_char_number(values)) {
-                    values = values + "+";
-                }
-            case R.id.button_subtract:
-                if (is_first_char_number(values)) {
-                    values = values + "-";
-                }
-            case R.id.button_multiply:
-                if (is_first_char_number(values)) {
-                    values = values + "*";
-                }
-            case R.id.button_divide:
-                if (is_first_char_number(values)) {
-                    values = values + "/";
-                }
-            case R.id.button_equal:
-                if (is_first_char_number(values)) {
-                    state = State.EVALUATE;
-                    process_expression(values);
-                }
-=======
             case R.id.btnRadix:
                 values = values + ".";
             // Operations:
@@ -140,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnEquals:
                 state = State.EVALUATE;
                 process_expression(values);
->>>>>>> origin/main
             // Miscellaneous activities:
             case R.id.btnClear:
                 reset_calculator();
