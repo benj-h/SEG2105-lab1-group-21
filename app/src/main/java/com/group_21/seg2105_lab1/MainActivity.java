@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clear_display() {
-        display.setText("");
+        display.setText(R.string.View_textbox_text);
     }
 
     private void reset_calculator() {
