@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Button on-click logic
     @Override
     public void onClick(View v) {
-        // TODO: Add edge when display.getText().equals(R.id.View_textbox_text) to set the string instead of concat
         switch (v.getId()) {
             // Digits:
             case R.id.btn1:
