@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     // Define all buttons that correspond to digits
     Button button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_0, button_decimal;
     // Define all buttons that correspond to mathematical operations
-    Button button_add, button_subtract, button_multiply, button_divide, button_left_bracket, button_right_bracket, button_equal;
+    Button button_add, button_subtract, button_multiply, button_divide, button_radix, button_left_bracket, button_right_bracket, button_equal;
     // Define all buttons that correspond to miscellaneous activities
     Button button_clear, button_backspace;
     // Define calculator display
@@ -38,76 +38,81 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialize all buttons that correspond to digits
-        button_1 = findViewById(R.id.button_1);
-        button_2 = findViewById(R.id.button_2);
-        button_3 = findViewById(R.id.button_3);
-        button_4 = findViewById(R.id.button_4);
-        button_5 = findViewById(R.id.button_5);
-        button_6 = findViewById(R.id.button_6);
-        button_7 = findViewById(R.id.button_7);
-        button_8 = findViewById(R.id.button_8);
-        button_9 = findViewById(R.id.button_9);
-        button_0 = findViewById(R.id.button_0);
+        button_1 = findViewById(R.id.btn1);
+        button_2 = findViewById(R.id.btn2);
+        button_3 = findViewById(R.id.btn3);
+        button_4 = findViewById(R.id.btn4);
+        button_5 = findViewById(R.id.btn5);
+        button_6 = findViewById(R.id.btn6);
+        button_7 = findViewById(R.id.btn7);
+        button_8 = findViewById(R.id.btn8);
+        button_9 = findViewById(R.id.btn9);
+        button_0 = findViewById(R.id.btn0);
 
         // Initialize all buttons that correspond to mathematical operations
-        button_add = findViewById(R.id.button_add);
-        button_subtract = findViewById(R.id.button_subtract);
-        button_multiply = findViewById(R.id.button_multiply);
-        button_divide = findViewById(R.id.button_divide);
-        button_left_bracket = findViewById(R.id.button_left_bracket);
-        button_right_bracket = findViewById(R.id.button_left_bracket);
-        button_equal = findViewById(R.id.button_equal);
+        button_add = findViewById(R.id.btnAdd);
+        button_subtract = findViewById(R.id.btnSubstract);
+        button_multiply = findViewById(R.id.btnMultiply);
+        button_divide = findViewById(R.id.btnDivide);
+        button_radix = findViewById(R.id.btnRadix);
+        button_left_bracket = findViewById(R.id.btnBracketsOpen);
+        button_right_bracket = findViewById(R.id.btnBracketsClosed);
+        button_equal = findViewById(R.id.btnEquals);
 
         // Initialize all buttons that correspond to miscellaneous activities
-        button_clear = findViewById(R.id.button_clear);
-        button_backspace = findViewById(R.id.button_backspace);
+        button_clear = findViewById(R.id.btnClear);
+        button_backspace = findViewById(R.id.btnBackspace);
 
         // Initialize calculator display
-        display = findViewById(R.id.display);
+        display = findViewById(R.id.textbox);
 
+        clear_display();
         }
 
     // Button on-click logic
     public void onClick(View v) {
+        // TODO: Add edge when display.getText().equals(R.id.View_textbox_text) to set the string instead of concat
         switch (v.getId()) {
             // Digits:
-            case R.id.button_1:
+            case R.id.btn1:
                 values = values + "1";
-            case R.id.button_2:
+            case R.id.btn2:
                 values = values + "2";
-            case R.id.button_3:
+            case R.id.btn3:
                 values = values + "3";
-            case R.id.button_4:
+            case R.id.btn4:
                 values = values + "4";
-            case R.id.button_5:
+            case R.id.btn5:
                 values = values + "5";
-            case R.id.button_6:
+            case R.id.btn6:
                 values = values + "6";
-            case R.id.button_7:
+            case R.id.btn7:
                 values = values + "7";
-            case R.id.button_8:
+            case R.id.btn8:
                 values = values + "8";
-            case R.id.button_9:
+            case R.id.btn9:
                 values = values + "9";
-            case R.id.button_0:
+            case R.id.btn0:
                 values = values + "0";
-            case R.id.button_decimal:
+            case R.id.btnRadix:
                 values = values + ".";
             // Operations:
-            case R.id.button_add:
+            case R.id.btnAdd:
                 values = values + "+";
-            case R.id.button_subtract:
+            case R.id.btnSubstract:
                 values = values + "-";
-            case R.id.button_multiply:
+            case R.id.btnMultiply:
                 values = values + "*";
-            case R.id.button_divide:
+            case R.id.btnDivide:
                 values = values + "/";
-            case R.id.button_equal:
+            case R.id.btnEquals:
                 state = State.EVALUATE;
                 process_expression(values);
             // Miscellaneous activities:
-            case R.id.button_clear:
+            case R.id.btnClear:
                 reset_calculator();
+            case R.id.btnBackspace:
+                remove_last_character();
         }
         display.setText(values);
     }
@@ -137,6 +142,10 @@ public class MainActivity extends AppCompatActivity {
     private void reset_calculator() {
         values = "";
         clear_display();
+    }
+
+    private void remove_last_character() {
+        // TODO: Implement remove_last_character()
     }
 
     public static State get_state() {

@@ -2,7 +2,7 @@
     <string name="app_name">Group 21 - Lab 1</string>
 
     <!-- View -->
-    <string name="View.textBox.text">Input your equation...</string>
+    <string name="View.textbox.text">Input your equation...</string>
 
     <string name="View.btn1.text">1</string>
     <string name="View.btn2.text">2</string>

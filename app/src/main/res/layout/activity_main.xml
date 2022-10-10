@@ -8,12 +8,11 @@
 
 
     <TextView
-        android:id="@+id/textBox"
+        android:id="@+id/textbox"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:background="@drawable/textbox_background"
         android:gravity="center"
-        android:text="@string/View.textBox.text"
         android:textAlignment="textEnd"
         android:textSize="30sp"
         android:visibility="visible"
@@ -64,7 +63,7 @@
                 android:text="@string/View.btnBracketsClosed.text" />
 
             <Button
-                android:id="@+id/btnPlus"
+                android:id="@+id/btnAdd"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="90dp"
@@ -106,7 +105,7 @@
                 android:text="@string/View.btn3.text" />
 
             <Button
-                android:id="@+id/btnMinus"
+                android:id="@+id/btnSubstract"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="90dp"
