@@ -165,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     
 
     private void process_expression(String expr) {
+        if(expr.equals("")) return;
         double result;
         result = Evaluator.evaluate_expression(expr);
         values = Double.toString(result);
