@@ -150,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnEquals:
                 state = State.EVALUATE;
                 process_expression(values);
+                state = State.INPUT;
                 break;
             // Miscellaneous activities:
             case R.id.btnClear:
