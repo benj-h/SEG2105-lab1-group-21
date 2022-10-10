@@ -156,17 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         display.setText(values);
     }
-
-    private boolean is_first_char_number(String values) {
-        double test;
-        try {
-            test = (double)values.charAt(0);
-        }
-        catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
-    }
+    
 
     private void process_expression(String expr) {
         double result;
