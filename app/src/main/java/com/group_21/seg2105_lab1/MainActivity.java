@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     // Front End:
     // Define all buttons that correspond to digits
-    Button button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_0, button_decimal;
+    Button button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_0;
     // Define all buttons that correspond to mathematical operations
     Button button_add, button_subtract, button_multiply, button_divide, button_radix, button_left_bracket, button_right_bracket, button_equal;
     // Define all buttons that correspond to miscellaneous activities
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_backspace.setOnClickListener(this);
 
         // Initialize calculator display
-        display = (TextView) findViewById(R.id.textbox);
+        display = findViewById(R.id.textbox);
         setPlaceholder();
     }
 
@@ -168,6 +168,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         double result;
         result = Evaluator.evaluate_expression(expr);
         values = Double.toString(result);
+        if(!values.equals("NaN") && !values.equals("Infinity") && result % 1 == 0) values = Integer.toString((int)result);
     }
 
     private void setPlaceholder() { display.setText(R.string.View_textbox_text); }

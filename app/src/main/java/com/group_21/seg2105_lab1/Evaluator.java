@@ -21,7 +21,7 @@ public class Evaluator {
                 Scriptable scope = rhino.initStandardObjects();
                 rhino.evaluateString(scope, js_expression, "JavaScript", 1,null);
                 Function function = (Function)scope.get("evaluate", scope);
-                result = (Double)function.call(rhino, scope, scope, function_params);
+                result = (double)function.call(rhino, scope, scope, function_params);
             }
             catch (RhinoException e) {
                 result = Double.NaN;
