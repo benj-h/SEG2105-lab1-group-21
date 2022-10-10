@@ -1,24 +1,31 @@
 <resources>
-    <string name="app_name">seg2105-lab1-group-21</string>
-    <string name="zero">0</string>
-    <string name="one">1</string>
-    <string name="two">2</string>
-    <string name="three">3</string>
-    <string name="four">4</string>
-    <string name="five">5</string>
-    <string name="six">6</string>
-    <string name="seven">7</string>
-    <string name="eight">8</string>
-    <string name="nine">9</string>
-    <string name="decimal">.</string>
-    <string name="addition">+</string>
-    <string name="subtraction">-</string>
-    <string name="multiplication">*</string>
-    <string name="division">/</string>
-    <string name="equals">=</string>
-    <string name="backspace">BKSPC</string>
-    <string name="clear">C</string>
-    <string name="left_bracket">(</string>
-    <string name="right_bracket">)</string>
-    <string name="default_textview"></string>
+    <string name="app_name">Group 21 - Lab 1</string>
+
+    <!-- View -->
+    <string name="View.textbox.text">Input your equation...</string>
+
+    <string name="View.btn1.text">1</string>
+    <string name="View.btn2.text">2</string>
+    <string name="View.btn3.text">3</string>
+    <string name="View.btn4.text">4</string>
+    <string name="View.btn5.text">5</string>
+    <string name="View.btn6.text">6</string>
+    <string name="View.btn7.text">7</string>
+    <string name="View.btn8.text">8</string>
+    <string name="View.btn9.text">9</string>
+    <string name="View.btn0.text">0</string>
+
+    <string name="View.btnBracketsOpen.text">(</string>
+    <string name="View.btnBracketsClosed.text">)</string>
+    <string name="View.btnAdd.text">+</string>
+    <string name="View.btnSubstract.text">-</string>
+    <string name="View.btnMultiply.text">×</string>
+    <string name="View.btnDivide.text">÷</string>
+    <string name="View.btnEquals.text">=</string>
+
+    <string name="View.btnClear.text">AC</string>
+    <string name="View.btnRadix.text">.</string>
+    <string name="View.btnBackspace.text">←</string>
+
+
 </resources>
