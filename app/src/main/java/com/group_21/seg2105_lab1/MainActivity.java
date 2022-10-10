@@ -6,9 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     // Front End:
@@ -79,30 +76,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_left_bracket.setOnClickListener(this);
         button_right_bracket.setOnClickListener(this);
         button_equal.setOnClickListener(this);
+
         // Initialize all buttons that correspond to miscellaneous activities
         button_clear = findViewById(R.id.btnClear);
         button_backspace = findViewById(R.id.btnBackspace);
 
         button_clear.setOnClickListener(this);
         button_backspace.setOnClickListener(this);
+
         // Initialize calculator display
         display = (TextView) findViewById(R.id.textbox);
-
-        clear_display();
-        }
+        setPlaceholder();
+    }
 
     // Button on-click logic
+    @Override
     public void onClick(View v) {
         // TODO: Add edge when display.getText().equals(R.id.View_textbox_text) to set the string instead of concat
         switch (v.getId()) {
             // Digits:
             case R.id.btn1:
                 values = values + "1";
-
                 break;
             case R.id.btn2:
                 values = values + "2";
-
                 break;
             case R.id.btn3:
                 values = values + "3";
@@ -171,20 +168,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
-    private void process_expression(String values) {
+    private void process_expression(String expr) {
         double result;
-        result = Evaluator.evaluate_expression(values);
+        result = Evaluator.evaluate_expression(expr);
         values = Double.toString(result);
-        display.setText(Double.toString(result));
     }
 
-    private void clear_display() {
-        display.setText(R.string.View_textbox_text);
-    }
+    private void setPlaceholder() { display.setText(R.string.View_textbox_text); }
+
 
     private void reset_calculator() {
         values = "";
-        clear_display();
     }
 
     private void remove_last_character() {

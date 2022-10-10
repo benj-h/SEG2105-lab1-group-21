@@ -15,6 +15,7 @@ public class Evaluator {
         String js_expression = "function evaluate(arithmetic){  return eval(arithmetic)    ;} ";
         Object[] function_params = new Object[]{expression};
         Context rhino = Context.enter();
+        rhino.setOptimizationLevel(-1);
         if (MainActivity.get_state() == MainActivity.State.EVALUATE) {
             try {
                 Scriptable scope = rhino.initStandardObjects();
